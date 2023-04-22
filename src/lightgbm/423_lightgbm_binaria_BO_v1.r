@@ -35,7 +35,7 @@ PARAM  <- list()
 
 PARAM$experimento  <- "HT4230"
 
-PARAM$input$dataset       <- "D:/Maestria Ciencia de Datos/8_Laboratorio de Implementacion I/datasets/dataset_pequeno.csv"
+PARAM$input$dataset       <- "./datasets/dataset_pequeno.csv"
 PARAM$input$training      <- c( 202107 )  # los meses en los que vamos a entrenar
 
 PARAM$trainingstrategy$undersampling  <-  1.0    # un undersampling de 0.1  toma solo el 10% de los CONTINUA
@@ -192,7 +192,7 @@ EstimarGanancia_lightgbm  <- function( x )
 #Aqui empieza el programa
 
 #Aqui se debe poner la carpeta de la computadora local
-setwd("D:/Maestria Ciencia de Datos/8_Laboratorio de Implementacion I/TareasHogar/TP3/buckets/b1/")   #Establezco el Working Directory
+setwd("~/buckets/b1/")   #Establezco el Working Directory
 
 #cargo el dataset donde voy a entrenar el modelo
 dataset  <- fread( PARAM$input$dataset )
