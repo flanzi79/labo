@@ -182,7 +182,7 @@ drift_rank_cero_abs  <- function( campos_drift )
   for( campo in campos_drift )
   {
     cat( campo, " " )
-    dataset[ , paste0(campo,"_rank") :=  ((frank(get(campo) - 1) / (length(get(campo)) - 1)) * (max(get(campo)) - min(get(campo)))), by= foto_mes]
+    dataset[ , paste0(campo,"_rank") :=  ((frank(get(campo)) - 1) / (length(get(campo)) - 1)) * (max(get(campo),na.rm=TRUE) - min(get(campo),na.rm=TRUE)), by= foto_mes]
     dataset[ , (campo) := NULL ]
   }
 }
